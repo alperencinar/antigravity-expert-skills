@@ -1,7 +1,16 @@
 ---
 name: product-brainstorming
-description: "Use during the ideation/inception phase of a new product or feature. It guides the Product Owner through creative brainstorming, exploring user personas, value proposition mapping, and defining the initial product hook."
-tags: [brainstorming, ideation, user personas, value proposition, hook model, Jobs-to-be-Done]
+description: Use during the ideation/inception phase of a new product or feature.
+  It guides the Product Owner through creative brainstorming, exploring user personas,
+  value proposition mapping, and defining the initial product hook.
+tags:
+- brainstorming
+- ideation
+- user personas
+- value proposition
+- hook model
+- Jobs-to-be-Done
+user-invocable: true
 ---
 # Skill: Product Brainstormer
 
@@ -63,8 +72,8 @@ At the end of the brainstorming discussion (or when requested), synthesize the i
 
 ### 2.4 Recommended Next Steps
 Guide the Product Owner to the next stage in the lifecycle:
-- "Would you like to run `navigating-product-prioritization` to evaluate this concept's priority (RICE/MoSCoW score)?"
-- "Would you like to run `benchmarking-product-features` to audit how competitors solve this job?"
+- "Would you like to run `product-navigating-prioritization` to evaluate this concept's priority (RICE/MoSCoW score)?"
+- "Would you like to run `product-benchmarking-features` to audit how competitors solve this job?"
 
 ---
 
