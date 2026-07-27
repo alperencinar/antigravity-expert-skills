@@ -14,24 +14,25 @@ This skill provides a standardized, production-grade Game UI/UX architecture, sh
 
 | Command | Focus Module | Primary Reference Document |
 |---|---|---|
-| `/game-ui-paradigm` | AAA UI Paradigms (Diegetic, Spatial), Color Theory & SDF Typography | [`game_ui_ux_paradigms_and_visual_hierarchy.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/game_ui_ux_paradigms_and_visual_hierarchy.md) |
-| `/game-ui-arch` | FSM Layered Canvas & Stack Modal Navigation & Focus Graph | [`game_ui_architecture_and_navigation_fsm.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/game_ui_architecture_and_navigation_fsm.md) |
-| `/game-ui-button` | 7-State Button Lifecycle, Spring Micro-Interactions, Haptics & Audio | [`button_systems_micro_interactions_and_juice.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/button_systems_micro_interactions_and_juice.md) |
-| `/game-ui-responsive` | Device Safe Area Notch Inset, Aspect Ratio Adapters & Layout Math | [`responsive_layout_safearea_and_multi_device.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/responsive_layout_safearea_and_multi_device.md) |
-| `/game-ui-perf` | UGUI vs UI Toolkit, Canvas Splitting, SpriteAtlas & Zero-GC TMP | [`ugui_vs_ui_toolkit_and_performance_optimization.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/ugui_vs_ui_toolkit_and_performance_optimization.md) |
-| `/game-ui-hud` | Speedometer, World-Space Damage Pools, Off-screen Pins & DOTween | [`dynamic_gameplay_hud_and_worldspace_ui.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/dynamic_gameplay_hud_and_worldspace_ui.md) |
-| `/game-ui-shader` | Glassmorphism Blur, Glowing Outline, Procedural Corners & Holograms | [`game_ui_shaders_and_technical_art.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/game_ui_shaders_and_technical_art.md) |
-| `/game-ui-a11y` | Unity Localization, CJK/RTL Layout, Colorblind Shaders & UI Auditors | [`localization_accessibility_and_ui_auditing.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/localization_accessibility_and_ui_auditing.md) |
+| `/game-ui-paradigm` | AAA UI Paradigms (Diegetic, Spatial), Color Theory & SDF Typography | [`game_ui_ux_paradigms_and_visual_hierarchy.md`](researches/game_ui_ux_paradigms_and_visual_hierarchy.md) |
+| `/game-ui-arch` | FSM Layered Canvas & Stack Modal Navigation & Focus Graph | [`game_ui_architecture_and_navigation_fsm.md`](researches/game_ui_architecture_and_navigation_fsm.md) |
+| `/game-ui-button` | 7-State Button Lifecycle, Spring Micro-Interactions, Haptics & Audio | [`button_systems_micro_interactions_and_juice.md`](researches/button_systems_micro_interactions_and_juice.md) |
+| `/game-ui-responsive` | Device Safe Area Notch Inset, Aspect Ratio Adapters & Layout Math | [`responsive_layout_safearea_and_multi_device.md`](researches/responsive_layout_safearea_and_multi_device.md) |
+| `/game-ui-perf` | UGUI vs UI Toolkit, Canvas Splitting, SpriteAtlas & Zero-GC TMP | [`ugui_vs_ui_toolkit_and_performance_optimization.md`](researches/ugui_vs_ui_toolkit_and_performance_optimization.md) |
+| `/game-ui-hud` | Speedometer, World-Space Damage Pools, Off-screen Pins & DOTween | [`dynamic_gameplay_hud_and_worldspace_ui.md`](researches/dynamic_gameplay_hud_and_worldspace_ui.md) |
+| `/game-ui-shader` | Glassmorphism Blur, Glowing Outline, Procedural Corners & Holograms | [`game_ui_shaders_and_technical_art.md`](researches/game_ui_shaders_and_technical_art.md) |
+| `/game-ui-a11y` | Unity Localization, CJK/RTL Layout, Colorblind Shaders & UI Auditors | [`localization_accessibility_and_ui_auditing.md`](researches/localization_accessibility_and_ui_auditing.md) |
 
 ---
 
 ## 🚀 CARDIV STANDARDIZED UI PRODUCTION SCRIPTS
 
 Cardiv's production-ready, zero-bug UI architecture is implemented across the following C# scripts:
-- **Layout & Safe Area Engine**: [`SafeAreaPanel.cs`](file:///Users/alperencnrr/Downloads/cardiv/Assets/Cardiv/Scripts/UI/Layout/SafeAreaPanel.cs)
-- **Navigation Stack Router**: [`UIManager.cs`](file:///Users/alperencnrr/Downloads/cardiv/Assets/Cardiv/Scripts/UI/Navigation/UIManager.cs) & [`IUIScreen.cs`](file:///Users/alperencnrr/Downloads/cardiv/Assets/Cardiv/Scripts/UI/Navigation/IUIScreen.cs)
-- **Design Tokens System**: [`UIThemeConfig.cs`](file:///Users/alperencnrr/Downloads/cardiv/Assets/Cardiv/Scripts/UI/Styling/UIThemeConfig.cs) & [`UIStyleApplier.cs`](file:///Users/alperencnrr/Downloads/cardiv/Assets/Cardiv/Scripts/UI/Styling/UIStyleApplier.cs)
-- **Atomic Widgets**: [`ScoreWidget.cs`](file:///Users/alperencnrr/Downloads/cardiv/Assets/Cardiv/Scripts/UI/Widgets/ScoreWidget.cs), [`ComboWidget.cs`](file:///Users/alperencnrr/Downloads/cardiv/Assets/Cardiv/Scripts/UI/Widgets/ComboWidget.cs), [`PauseFABWidget.cs`](file:///Users/alperencnrr/Downloads/cardiv/Assets/Cardiv/Scripts/UI/Widgets/PauseFABWidget.cs), [`OilHazardWidget.cs`](file:///Users/alperencnrr/Downloads/cardiv/Assets/Cardiv/Scripts/UI/Widgets/OilHazardWidget.cs)
+These scripts live in the game project (not in this skill repository) under `Assets/Cardiv/Scripts/UI/`:
+- **Layout & Safe Area Engine**: `Layout/SafeAreaPanel.cs`
+- **Navigation Stack Router**: `Navigation/UIManager.cs` & `Navigation/IUIScreen.cs`
+- **Design Tokens System**: `Styling/UIThemeConfig.cs` & `Styling/UIStyleApplier.cs`
+- **Atomic Widgets**: `Widgets/ScoreWidget.cs`, `Widgets/ComboWidget.cs`, `Widgets/PauseFABWidget.cs`, `Widgets/OilHazardWidget.cs`
 
 ---
 
@@ -52,7 +53,7 @@ Cardiv's production-ready, zero-bug UI architecture is implemented across the fo
    - Use TextMeshPro SDF / Multi-channel SDF (MSDF) for crisp corners at extreme zoom levels.
    - Fallback Font Chain: Primary Font $\rightarrow$ CJK Fallback $\rightarrow$ Arabic RTL BiDi shaping.
 
-*Reference Document:* [`game_ui_ux_paradigms_and_visual_hierarchy.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/game_ui_ux_paradigms_and_visual_hierarchy.md)
+*Reference Document:* [`game_ui_ux_paradigms_and_visual_hierarchy.md`](researches/game_ui_ux_paradigms_and_visual_hierarchy.md)
 
 ---
 
@@ -72,7 +73,7 @@ Cardiv's production-ready, zero-bug UI architecture is implemented across the fo
    - Auto-scroll `ScrollRect` targeting focused UI element with `Mathf.SmoothDamp`.
    - Minimum Touch Target: Apple 44x44pt / Google 48x48dp with invisible Raycast padding.
 
-*Reference Document:* [`game_ui_architecture_and_navigation_fsm.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/game_ui_architecture_and_navigation_fsm.md)
+*Reference Document:* [`game_ui_architecture_and_navigation_fsm.md`](researches/game_ui_architecture_and_navigation_fsm.md)
 
 ---
 
@@ -90,7 +91,7 @@ Cardiv's production-ready, zero-bug UI architecture is implemented across the fo
 4. **Reusable UI Components**:
    - Modal Cards, Virtualized ScrollRect ($O(1)$ pool), Juicy Damage Ghost Progress Bars, Radial Selection Wheels.
 
-*Reference Document:* [`button_systems_micro_interactions_and_juice.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/button_systems_micro_interactions_and_juice.md)
+*Reference Document:* [`button_systems_micro_interactions_and_juice.md`](researches/button_systems_micro_interactions_and_juice.md)
 
 ---
 
@@ -121,7 +122,7 @@ Cardiv's production-ready, zero-bug UI architecture is implemented across the fo
      - Floating 3D HUD badges (`OilStatusUI.cs`) MUST use 100% opaque dark backgrounds (`Color32(10, 12, 18, 255)`) to prevent 3D road/coin bleed-through.
      - ALWAYS attach a dark `Outline` component (`Color32(0, 0, 0, 220)`, `effectDistance = (1.5, -1.5)`) to HUD texts for maximum edge contrast over dynamic game scenes.
 
-*Reference Document:* [`responsive_layout_safearea_and_multi_device.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/responsive_layout_safearea_and_multi_device.md)
+*Reference Document:* [`responsive_layout_safearea_and_multi_device.md`](researches/responsive_layout_safearea_and_multi_device.md)
 
 ---
 
@@ -134,7 +135,7 @@ Cardiv's production-ready, zero-bug UI architecture is implemented across the fo
 4. **Zero-GC Text Updates**:
    - Use `FastStringFormat` or `TMP_Text.SetText()` numeric/StringBuilder overloads. Never concatenate strings (`score.text = "Score: " + val`) in `Update()`.
 
-*Reference Document:* [`ugui_vs_ui_toolkit_and_performance_optimization.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/ugui_vs_ui_toolkit_and_performance_optimization.md)
+*Reference Document:* [`ugui_vs_ui_toolkit_and_performance_optimization.md`](researches/ugui_vs_ui_toolkit_and_performance_optimization.md)
 
 ---
 
@@ -149,7 +150,7 @@ Cardiv's production-ready, zero-bug UI architecture is implemented across the fo
 5. **Capsule Badge & Status Indicator Placement**:
    - Ensure dynamic 3D World-Space floating badges (`OilStatusUI.cs`) hover at an un-obstructed offset (`worldOffset = Vector3(0, 2.6f, 0.2f)`).
 
-*Reference Document:* [`dynamic_gameplay_hud_and_worldspace_ui.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/dynamic_gameplay_hud_and_worldspace_ui.md)
+*Reference Document:* [`dynamic_gameplay_hud_and_worldspace_ui.md`](researches/dynamic_gameplay_hud_and_worldspace_ui.md)
 
 ---
 
@@ -161,7 +162,7 @@ Cardiv's production-ready, zero-bug UI architecture is implemented across the fo
 3. **Procedural Rounded Corners**: Independent 4-corner SDF radius calculation with antialiased stroke (`UI_ProceduralRoundedCorners_URP.shader`).
 4. **Holographic Shimmer**: Anisotropic specular sweep reflection for rare cards/badges.
 
-*Reference Document:* [`game_ui_shaders_and_technical_art.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/game_ui_shaders_and_technical_art.md)
+*Reference Document:* [`game_ui_shaders_and_technical_art.md`](researches/game_ui_shaders_and_technical_art.md)
 
 ---
 
@@ -173,4 +174,4 @@ Cardiv's production-ready, zero-bug UI architecture is implemented across the fo
 3. **Colorblind Filters**: Real-time Deuteranopia, Protanopia, Tritanopia URP simulation shader filter (`UI/ColorblindFilter`).
 4. **Automated UI Quality Auditors**: Editor tools to inspect draw calls (`UIDrawCallAuditor.cs`), unassigned TMP fonts (`TMPFontAndOverflowAuditor.cs`), multi-device aspect ratios (`DeviceAspectRatioSimulator.cs`), and RectTransform element overlaps (`RectTransformOverlapAuditor.cs`).
 
-*Reference Document:* [`localization_accessibility_and_ui_auditing.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/localization_accessibility_and_ui_auditing.md)
+*Reference Document:* [`localization_accessibility_and_ui_auditing.md`](researches/localization_accessibility_and_ui_auditing.md)

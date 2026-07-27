@@ -3,7 +3,7 @@
 > **Doküman Türü:** AAA & Enterprise Mobil / 3D Oyun Geliştirme Teknik Araştırması  
 > **Hedef Platform:** Unity Engine (URP / HDRP / Built-in UI System & TextMeshPro)  
 > **Dil:** Türkçe (Teknik Terimler ve Kod Standartları Dahil)  
-> **Konum:** `/Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/localization_accessibility_and_ui_auditing.md`
+> **Konum:** `skills/game-ui-designer-developer/researches/localization_accessibility_and_ui_auditing.md`
 
 ---
 

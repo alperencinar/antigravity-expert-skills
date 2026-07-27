@@ -14,13 +14,13 @@ This skill provides a standardized, production-grade architecture and technical 
 
 | Command | Focus Module | Primary Reference Document |
 |---|---|---|
-| `/unity-expert-asset` | AI 3D Asset Normalization & FBX Pipeline | [`ai_3d_asset_ingestion_and_normalization.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/ai_3d_asset_ingestion_and_normalization.md) |
-| `/unity-expert-arch` | FSM State Machine & Solvable Lane Generator | [`endless_runner_state_and_generation_systems.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/endless_runner_state_and_generation_systems.md) |
-| `/unity-expert-pool` | Zero-GC Object Pooling & Dynamic Hazards | [`mobile_performance_zero_gc_architecture.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/mobile_performance_zero_gc_architecture.md) |
-| `/unity-expert-render` | URP CurvedWorld Shader & Lighting Mastery | [`urp_curved_world_and_lighting_mastery.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/urp_curved_world_and_lighting_mastery.md) |
-| `/unity-expert-juice` | Camera Juicing, Dynamic FOV & Screenshake | [`camera_juicing_and_screen_shake.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/camera_juicing_and_screen_shake.md) |
-| `/unity-expert-audio` | Engine Audio Pitch & Haptic Feedback | [`mobile_audio_and_haptics.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/mobile_audio_and_haptics.md) |
-| `/unity-expert-ui` | Responsive UI, Safe Area Notch & Canvas Splitting | [`ui_and_hud_responsive_layout.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/ui_and_hud_responsive_layout.md) |
+| `/unity-expert-asset` | AI 3D Asset Normalization & FBX Pipeline | [`ai_3d_asset_ingestion_and_normalization.md`](researches/ai_3d_asset_ingestion_and_normalization.md) |
+| `/unity-expert-arch` | FSM State Machine & Solvable Lane Generator | [`endless_runner_state_and_generation_systems.md`](researches/endless_runner_state_and_generation_systems.md) |
+| `/unity-expert-pool` | Zero-GC Object Pooling & Dynamic Hazards | [`mobile_performance_zero_gc_architecture.md`](researches/mobile_performance_zero_gc_architecture.md) |
+| `/unity-expert-render` | URP CurvedWorld Shader & Lighting Mastery | [`urp_curved_world_and_lighting_mastery.md`](researches/urp_curved_world_and_lighting_mastery.md) |
+| `/unity-expert-juice` | Camera Juicing, Dynamic FOV & Screenshake | [`camera_juicing_and_screen_shake.md`](researches/camera_juicing_and_screen_shake.md) |
+| `/unity-expert-audio` | Engine Audio Pitch & Haptic Feedback | [`mobile_audio_and_haptics.md`](researches/mobile_audio_and_haptics.md) |
+| `/unity-expert-ui` | Responsive UI, Safe Area Notch & Canvas Splitting | [`ui_and_hud_responsive_layout.md`](researches/ui_and_hud_responsive_layout.md) |
 | `/unity-expert-verify` | Live Verification, Diagnostics & Capture | Unity Editor Playmode & Screenshot Audit Tools |
 
 ---
@@ -92,7 +92,7 @@ Automates raw AI mesh ingestion (Meshy AI, Tripo AI, Rodin) into game-ready pref
                  └── wheel-rear-right (Centered Pivot)
    ```
 
-*Reference Code & Guide:* [`ai_3d_asset_ingestion_and_normalization.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/ai_3d_asset_ingestion_and_normalization.md)
+*Reference Code & Guide:* [`ai_3d_asset_ingestion_and_normalization.md`](researches/ai_3d_asset_ingestion_and_normalization.md)
 
 ---
 
@@ -113,7 +113,7 @@ Implements clean, interface-driven game flow and solvable procedural spawning.
 3. **Floating Origin Reset (`FloatingOriginHandler`)**:
    When player $Z > 1000\text{m}$, broadcast transform shift $(\Delta Z = -1000\text{m})$ to eliminate float32 vertex jitter and camera stutter.
 
-*Reference Code & Guide:* [`endless_runner_state_and_generation_systems.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/endless_runner_state_and_generation_systems.md)
+*Reference Code & Guide:* [`endless_runner_state_and_generation_systems.md`](researches/endless_runner_state_and_generation_systems.md)
 
 ---
 
@@ -128,7 +128,7 @@ Eliminates runtime heap allocations and handles dynamic kinetic environmental ha
 3. **No Dynamic Component Churn**: Never call `DestroyImmediate` or `AddComponent` during gameplay spawning.
 4. **Time.timeScale Physics Sync**: Always update `Time.fixedDeltaTime = 0.02f * Time.timeScale` during slow-motion.
 
-*Reference Code & Guide:* [`mobile_performance_zero_gc_architecture.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/mobile_performance_zero_gc_architecture.md)
+*Reference Code & Guide:* [`mobile_performance_zero_gc_architecture.md`](researches/mobile_performance_zero_gc_architecture.md)
 
 ---
 
@@ -143,7 +143,7 @@ Renders stylized curved horizon visuals with 100% dynamic shadow accuracy.
 3. **CPU Frustum Culling Expansion**: Expand `renderer.localBounds` via `CurvedWorldBoundsExpander.cs` to prevent CPU static AABB culling from clipping bent meshes.
 4. **Forward+ Lighting**: Use URP Forward+ for vehicle spotlights to keep SRP Batcher compatibility intact across mobile GPUs (ARM Mali, Qualcomm Adreno, Apple Silicon).
 
-*Reference Code & Guide:* [`urp_curved_world_and_lighting_mastery.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/urp_curved_world_and_lighting_mastery.md)
+*Reference Code & Guide:* [`urp_curved_world_and_lighting_mastery.md`](researches/urp_curved_world_and_lighting_mastery.md)
 
 ---
 
@@ -157,7 +157,7 @@ Delivers visceral player feedback and cinematic speed sensation.
 3. **Impact Hitstop**: Micro pause ($0.03\text{s} - 0.08\text{s}$) using unscaled time for impact weight.
 4. **Lane Switch Roll Banking**: Dynamic roll banking ($\theta_{\text{roll}} = -k \cdot v_x$) during quick evasive turns.
 
-*Reference Code & Guide:* [`camera_juicing_and_screen_shake.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/camera_juicing_and_screen_shake.md)
+*Reference Code & Guide:* [`camera_juicing_and_screen_shake.md`](researches/camera_juicing_and_screen_shake.md)
 
 ---
 
@@ -171,7 +171,7 @@ Produces realistic engine acoustics and cross-platform tactile feel.
 3. **Audio Mixer Ducking**: Low-pass filter sweeps ($22000\text{Hz} \rightarrow 800\text{Hz}$) during bullet-time and crash sequences.
 4. **Cross-Platform Haptics**: iOS `UIImpactFeedbackGenerator` & Android `VibrationEffect` via `MobileHapticBridge.cs`.
 
-*Reference Code & Guide:* [`mobile_audio_and_haptics.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/mobile_audio_and_haptics.md)
+*Reference Code & Guide:* [`mobile_audio_and_haptics.md`](researches/mobile_audio_and_haptics.md)
 
 ---
 
@@ -185,7 +185,7 @@ Optimizes mobile HUD elements across all display ratios and notches.
 3. **Zero-GC Text Updates**: Use `TMP_Text.SetText()` overloads and shared material presets.
 4. **Aspect Ratio Adapters**: Dynamic scaling for 16:9, 19.5:9, 21:9, and tablet 4:3 screens.
 
-*Reference Code & Guide:* [`ui_and_hud_responsive_layout.md`](file:///Users/alperencnrr/Downloads/cardiv/docs/unityexpert/ui_and_hud_responsive_layout.md)
+*Reference Code & Guide:* [`ui_and_hud_responsive_layout.md`](researches/ui_and_hud_responsive_layout.md)
 
 ---
 

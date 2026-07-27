@@ -3,7 +3,7 @@
 > **Doküman Türü:** Production-Grade Technical Art & UI Shader Rehberi  
 > **Hedef Motor/Pipeline:** Unity 2022.3 LTS / 2023.x / 6.x (UGUI & Universal Render Pipeline - URP)  
 > **Dil:** Türkçe (HLSL / ShaderLab / C# kodları ve Matematiksel Formüller dahil)  
-> **Konum:** `/Users/alperencnrr/Downloads/cardiv/docs/gameuidesigner/game_ui_shaders_and_technical_art.md`
+> **Konum:** `skills/game-ui-designer-developer/researches/game_ui_shaders_and_technical_art.md`
 
 ---
 
