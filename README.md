@@ -75,3 +75,63 @@ python3 skills/product-orchestrating/scripts/check_skills.py
 
 ## 🔗 Repository Reference
 *   **GitHub Repos main branch:** `https://github.com/alperencinar/antigravity-expert-skills.git`
+
+Skill Kütüphanesi
+
+Bu klasör, Cardiv projesinde kullanılan 3 ana skill'in tam detaylarını, alt skill kırılımlarını ve ilgili research dokümanlarının kopyalarını içerir. Her skill kendi klasöründe kendine yeterli (self-contained) şekilde organize edilmiştir.
+
+## 📁 Klasör Yapısı
+
+```
+AlperenSkills/
+├── unity-expert/
+│   ├── SKILL.md                  # Ana skill tanımı (master)
+│   ├── subskills/                # 8 alt skill detay dosyası
+│   │   ├── unity-expert-asset.md    # AI 3D Asset Normalization & FBX Pipeline
+│   │   ├── unity-expert-arch.md     # FSM State Machine & Solvable Lane Generator
+│   │   ├── unity-expert-pool.md     # Zero-GC Object Pooling & Dynamic Hazards
+│   │   ├── unity-expert-render.md   # URP CurvedWorld Shader & Lighting Mastery
+│   │   ├── unity-expert-juice.md    # Camera Juicing, Dynamic FOV & Screenshake
+│   │   ├── unity-expert-audio.md    # Engine Audio Pitch & Haptic Feedback
+│   │   ├── unity-expert-ui.md       # Responsive UI, Safe Area & Canvas Splitting
+│   │   └── unity-expert-verify.md   # Live Verification, Diagnostics & Capture
+│   └── researches/               # 19 research dokümanı kopyası
+│
+├── 3d-asset-creator/
+│   ├── SKILL.md                  # Ana skill tanımı (master)
+│   ├── subskills/                # 6 alt skill detay dosyası
+│   │   ├── 3d-asset-concept.md      # Reference Image Generation
+│   │   ├── 3d-asset-generate.md     # Meshy AI Generation Loop
+│   │   ├── 3d-asset-polish.md       # Blender Split, Symmetrize & Scale
+│   │   ├── 3d-asset-sync.md         # Unity Textures & PBR Materials
+│   │   ├── 3d-asset-auto.md         # Zero-Code Data-Driven Asset Import
+│   │   └── 3d-asset-verify.md       # Visual Inspection & Play Mode
+│   └── researches/               # 9 research dokümanı kopyası
+│
+└── game-ui-designer-developer/
+    ├── SKILL.md                  # Ana skill tanımı (master)
+    ├── subskills/                # 8 alt skill detay dosyası
+    │   ├── game-ui-paradigm.md      # AAA UI Paradigms, Color Theory & SDF Typography
+    │   ├── game-ui-arch.md          # FSM Layered Canvas & Stack Modal Navigation
+    │   ├── game-ui-button.md        # 7-State Button Lifecycle, Spring Juice & Haptics
+    │   ├── game-ui-responsive.md    # Safe Area, Aspect Ratio Adapters & Layout Math
+    │   ├── game-ui-perf.md          # UGUI vs UI Toolkit & Zero-GC Optimization
+    │   ├── game-ui-hud.md           # Dynamic Gameplay HUD & World-Space Damage Text
+    │   ├── game-ui-shader.md        # Glassmorphism, Neon Glow & Technical Art Shaders
+    │   └── game-ui-a11y.md          # Localization, CJK/RTL & Automated UI Auditors
+    └── researches/               # 10 research dokümanı kopyası
+```
+
+## 🔗 Kaynak Eşlemesi
+
+| Skill | Orijinal Skill Kaynağı | Research Kaynakları |
+|---|---|---|
+| `unity-expert` | `.agents/skills/unity-expert/SKILL.md` | `docs/unityexpert/` (11) + `docs/researches/` (8 ilgili) |
+| `3d-asset-creator` | `.agents/skills/3d-asset-creator/SKILL.md` | `docs/unityexpert/` (2 ilgili) + `docs/researches/` (7 ilgili) |
+| `game-ui-designer-developer` | `.agents/skills/game-ui-designer-developer/SKILL.md` | `docs/gameuidesigner/` (8) + `docs/researches/` (2 ilgili) |
+
+## 📌 Kullanım Notları
+
+- Her alt skill dosyası, kendi klasöründeki `../researches/` altında yer alan doküman kopyalarına göreli linklerle bağlıdır; klasör taşınsa bile linkler çalışır.
+- `SKILL.md` dosyaları orijinallerin birebir kopyasıdır; orijinallerdeki mutlak yollar (`docs/...`) hâlâ ana proje dokümanlarına işaret eder. Alt skill dosyaları ise bu klasördeki yerel kopyaları referanslar.
+- Research dokümanları kopyadır; ana kaynak (source of truth) `docs/` altındaki orijinallerdir. Orijinaller güncellendiğinde buradaki kopyaların senkronlanması gerekir.
