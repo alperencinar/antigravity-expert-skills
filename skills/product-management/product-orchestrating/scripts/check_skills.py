@@ -2,12 +2,27 @@ import os
 import re
 import yaml
 
-# Resolve relative to the script location: skills/product-orchestrating/scripts/
+# Resolve relative to the script location: skills/product-management/product-orchestrating/scripts/
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-SKILLS_DIR = os.path.normpath(os.path.join(SCRIPT_DIR, "../.."))
+SKILLS_DIR = os.path.normpath(os.path.join(SCRIPT_DIR, "../../.."))
 
-def check_skill(skill_name):
-    skill_path = os.path.join(SKILLS_DIR, skill_name, "SKILL.md")
+def discover_skills(skills_root):
+    skills = []
+    for item in sorted(os.listdir(skills_root)):
+        item_path = os.path.join(skills_root, item)
+        if not os.path.isdir(item_path) or item.startswith("."):
+            continue
+        if os.path.exists(os.path.join(item_path, "SKILL.md")):
+            skills.append((item, item_path, None))
+        else:
+            for sub in sorted(os.listdir(item_path)):
+                sub_path = os.path.join(item_path, sub)
+                if os.path.isdir(sub_path) and os.path.exists(os.path.join(sub_path, "SKILL.md")):
+                    skills.append((sub, sub_path, item))
+    return skills
+
+def check_skill(skill_dir, skill_name):
+    skill_path = os.path.join(skill_dir, "SKILL.md")
     if not os.path.exists(skill_path):
         return f"File does not exist: {skill_path}"
     
@@ -40,7 +55,7 @@ def check_skill(skill_name):
         desc = data["description"]
         if len(desc) > 1024:
             errors.append(f"Description too long: {len(desc)} chars (max 1024)")
-        if not (desc.startswith("Use ") or desc.startswith("This skill") or desc.startswith("Add ") or desc.startswith("Document ")):
+        if not (desc.startswith("Use ") or desc.startswith("This skill") or desc.startswith("Add ") or desc.startswith("Document ") or desc.startswith("Complete ") or desc.startswith("Master ") or desc.startswith("Comprehensive ")):
             errors.append(f"Description might not be in standard third-person/imperative format: '{desc[:30]}...'")
             
     if "description" in data:
@@ -54,8 +69,8 @@ def check_skill(skill_name):
     # Check relative links to other skills
     links = re.findall(r"\[.*?\]\((.*?)\)", content)
     for link in links:
-        if link.startswith("../"):
-            target_path = os.path.normpath(os.path.join(SKILLS_DIR, skill_name, link))
+        if link.startswith("../") or link.startswith("./"):
+            target_path = os.path.normpath(os.path.join(skill_dir, link))
             if not os.path.exists(target_path):
                 errors.append(f"Broken relative link: '{link}' -> resolved to non-existent '{target_path}'")
                 
@@ -66,22 +81,23 @@ if __name__ == "__main__":
         print(f"Skills directory does not exist: {SKILLS_DIR}")
         exit(1)
         
-    skills = [d for d in os.listdir(SKILLS_DIR) if os.path.isdir(os.path.join(SKILLS_DIR, d))]
+    skills = discover_skills(SKILLS_DIR)
     
-    print(f"Auditing {len(skills)} skills in {SKILLS_DIR}...\n")
+    print(f"Auditing {len(skills)} skills in {SKILLS_DIR} across categories...\n")
     all_ok = True
-    for skill in sorted(skills):
-        res = check_skill(skill)
+    for skill_name, skill_path, category in sorted(skills, key=lambda s: (s[2] or '', s[0])):
+        cat_prefix = f"[{category}] " if category else ""
+        res = check_skill(skill_path, skill_name)
         if isinstance(res, list) and len(res) > 0:
-            print(f"❌ {skill}:")
+            print(f"❌ {cat_prefix}{skill_name}:")
             for err in res:
                 print(f"   - {err}")
             all_ok = False
         elif isinstance(res, str):
-            print(f"❌ {skill}: {res}")
+            print(f"❌ {cat_prefix}{skill_name}: {res}")
             all_ok = False
         else:
-            print(f"✅ {skill}: Perfect!")
+            print(f"✅ {cat_prefix}{skill_name}: Perfect!")
             
     if all_ok:
         print("\nAll skills passed verification successfully!")
