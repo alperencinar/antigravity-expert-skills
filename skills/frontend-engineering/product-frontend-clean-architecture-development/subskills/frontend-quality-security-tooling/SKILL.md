@@ -65,9 +65,9 @@ describe('LoginForm Integration Test', () => {
     const passwordInput = screen.getByLabelText(/şifre/i);
     const submitBtn = screen.getByRole('button', { name: /giriş yap/i });
 
-    // 2. Gerçekçi kullanıcı etkileşimi
-    await user.type(emailInput, 'developer@antigravity.io');
-    await user.type(passwordInput, 'Secret123!');
+    // 2. Gerçekçi kullanıcı etkileşimi (Mock / Test verisi)
+    await user.type(emailInput, 'user@example.com');
+    await user.type(passwordInput, 'mock-test-password-123');
     await user.click(submitBtn);
 
     // 3. Durum doğrulaması
